@@ -1,0 +1,146 @@
+:root {
+    --gold: #e2b04a;
+    --gold-dark: #8e6a25;
+    --bg: #080808;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.grain-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.15; z-index: 10; pointer-events: none;
+}
+
+.glow-sphere {
+    position: fixed; top: 20%; left: 50%; transform: translateX(-50%);
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(226, 176, 74, 0.08) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.app-container { width: 100%; max-width: 400px; padding: 20px; text-align: center; }
+
+.premium-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin: 0;
+    text-shadow: 0 0 20px rgba(226, 176, 74, 0.3);
+}
+
+.divider {
+    margin: 15px auto;
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    position: relative;
+}
+
+.diamond {
+    position: absolute; top: -3px; left: 50%; transform: translateX(-50%) rotate(45deg);
+    width: 6px; height: 6px; background: var(--gold);
+}
+
+.tagline { font-size: 0.75rem; letter-spacing: 2px; color: #666; text-transform: uppercase; }
+
+.glass-morph {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    padding: 40px 30px;
+    margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.input-wrapper label { display: block; font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); margin-bottom: 10px; }
+
+input {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(226, 176, 74, 0.3);
+    color: white; font-size: 1.2rem; text-align: center;
+    padding: 10px; outline: none; transition: 0.3s;
+}
+
+input:focus { border-bottom-color: var(--gold); }
+
+.action-btn {
+    margin-top: 30px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border: none; padding: 15px 40px; border-radius: 12px;
+    font-weight: bold; cursor: pointer; color: #000; letter-spacing: 1px;
+}
+
+/* Orb UI */
+.orb-container { position: relative; width: 220px; height: 220px; margin: 40px auto; }
+
+.main-orb {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 160px; height: 160px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #222, #000);
+    border: 1px solid var(--gold);
+    color: var(--gold); font-family: 'Cinzel', serif; font-size: 1rem;
+    cursor: pointer; z-index: 5;
+    box-shadow: inset 0 0 20px rgba(226, 176, 74, 0.2);
+}
+
+.orb-outer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 50%; border: 1px solid rgba(226, 176, 74, 0.1);
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.premium-footer {
+    margin-top: 60px; cursor: pointer; opacity: 0.6; transition: 0.3s;
+}
+
+.premium-footer:hover { opacity: 1; }
+
+.footer-content { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.75rem; }
+
+.gold-star { color: var(--gold); font-size: 1rem; }
+
+/* Modal Experience */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); z-index: 100; backdrop-filter: blur(15px);
+}
+
+.modal-card {
+    background: #0f0f0f; width: 85%; max-width: 340px;
+    margin: 15% auto; padding: 40px 20px; border-radius: 30px;
+    border: 1px solid var(--gold-dark); text-align: center;
+    position: relative;
+}
+
+.profile-frame {
+    width: 110px; height: 110px; margin: 0 auto 20px;
+    padding: 5px; border: 1px solid var(--gold); border-radius: 50%;
+}
+
+.profile-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+.aspirant-badge {
+    background: rgba(226, 176, 74, 0.1); color: var(--gold);
+    font-size: 0.6rem; padding: 5px 15px; border-radius: 20px;
+    display: inline-block; margin: 10px 0; letter-spacing: 1px;
+}
+
+.close-btn { position: absolute; top: 20px; right: 25px; color: var(--gold); cursor: pointer; }

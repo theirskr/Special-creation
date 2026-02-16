@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Special Creation | Ankit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    <div class="glow-sphere"></div>
+    
+    <main class="app-container">
+        <header class="fade-in">
+            <h1 class="premium-title">Special Creation</h1>
+            <div class="divider">
+                <span class="diamond"></span>
+            </div>
+            <p class="tagline">A Private Frequency for My Sweety</p>
+        </header>
+
+        <section id="auth-section" class="glass-morph fade-in">
+            <div class="input-wrapper">
+                <label>SECURE CHANNEL</label>
+                <input type="text" id="roomID" placeholder="••••••••" spellcheck="false">
+            </div>
+            <button onclick="initApp()" class="action-btn">ESTABLISH LINK</button>
+        </section>
+
+        <section id="control-section" class="glass-morph" style="display: none;">
+            <div class="connection-status">
+                <span class="status-pulse"></span> 
+                <span id="status-text">ENCRYPTED LINK ACTIVE</span>
+            </div>
+
+            <div class="orb-container">
+                <div class="orb-outer"></div>
+                <div class="orb-inner"></div>
+                <button id="triggerBtn" class="main-orb">SIGNAL</button>
+            </div>
+            <p class="instruction">Tap to reach her heart</p>
+        </section>
+
+        <footer class="premium-footer" onclick="openAbout()">
+            <div class="footer-line"></div>
+            <div class="footer-content">
+                <span class="gold-star">✦</span>
+                <p>Designed by <strong>Ankit Chaudhary</strong></p>
+                <span class="gold-star">✦</span>
+            </div>
+        </footer>
+    </main>
+
+    <div id="aboutModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeAbout()">✕</span>
+            </div>
+            <div class="profile-frame">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj66_N45SRCvsrfyGp-ikMWv9isicvDEJwt5StXnVj1_mXS_aAh4uAkZdVoSrjRGTACoSCQPHQZx6-xIb7X8z3fNMYaUNDXhnPlFZJg1F1YtiAMmDAov6ujkUuckdcdST-D1KjWINR2ot5XdNWRszwsy4jvfvFhe_9oluJt9nBPniwQNaEhaHB-l1vlfD0v/s1080/1000100942.jpg" alt="Aadi">
+            </div>
+            <h2 class="modal-name">I'm Aadi</h2>
+            <div class="aspirant-badge">NEET ASPIRANT • 2026</div>
+            <p class="modal-bio">
+                Created with love for my <strong>Sweety</strong>. 
+                Even when I'm lost in books, you're just a pulse away.
+            </p>
+            <p class="modal-footer-quote">"Physics explains the world, but you explain my heart."</p>
+        </div>
+    </div>
+
+    <audio id="alertSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
